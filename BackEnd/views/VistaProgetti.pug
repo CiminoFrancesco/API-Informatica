@@ -1,0 +1,25 @@
+doctype html
+html(lang="it")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Pagina Dati Alwaysdata
+    link(rel='stylesheet' href='../public/css/vista.css')
+
+  body
+    h1 Dati Alwaysdata
+    if dati
+      each dato in dati
+        ul
+          li Nome: #{dato.nome}
+          li Descrizione: #{dato.descrizione}
+          li Data inizio: #{dato.data_inizio}
+          li Data fine: #{dato.data_fine}
+          li Latitudine: #{dato.latitudine}
+          li Longitudine: #{dato.longitudine}
+          li Età minima: #{dato.eta_minima}
+    else
+      p Nessun dato disponibile
+    
+  a(href="/Index") Azioni disponibili
+

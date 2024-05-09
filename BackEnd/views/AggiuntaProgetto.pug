@@ -1,0 +1,37 @@
+doctype html
+html(lang="it")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Inserimento Progetto di Volontariato
+    link(rel='stylesheet' href='../public/css/aggiuntaprogetto.css')
+
+  body
+    h1 Inserimento Progetto di Volontariato
+    form(action="/AggiuntaProgetto", method="POST")
+      label(for="id") ID:
+      input(type="number", name="id", required)
+      br
+      label(for="nome") Nome:
+      input(type="text", name="nome", required)
+      br
+      label(for="descrizione") Descrizione:
+      textarea(name="descrizione", rows="4", required)
+      br
+      label(for="data_inizio") Data Inizio:
+      input(type="date", name="data_inizio", required)
+      br
+      label(for="data_fine") Data Fine:
+      input(type="date", name="data_fine", required)
+      br
+      label(for="latitudine") Latitudine:
+      input(type="text", name="latitudine", step="any", required)
+      br
+      label(for="longitudine") Longitudine:
+      input(type="text", name="longitudine", step="any", required)
+      br
+      label(for="eta_minima") Età Minima:
+      input(type="number", name="eta_minima", required)
+      br
+      button(type="submit") Inserisci
+    a(href="/Index") Azioni disponibili

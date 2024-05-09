@@ -1,0 +1,31 @@
+doctype html
+html(lang="it")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Modifica Progetto
+    link(rel='stylesheet' href='../public/css/modificazione.css')
+
+  body
+    h1 Modifica Progetto
+    form(action=`/ModificaProgetto`, method="post")
+      label(for="ID") ID progetto:
+      input(type="number", id="ID", name="ID")
+      label(for="nome") Nome del progetto:
+      input(type="text", id="nome", name="nome")
+      label(for="descrizione") Descrizione del progetto:
+      textarea(id="descrizione", name="descrizione")
+      label(for="data_inizio") Data inizio:
+      input(type="date", id="data_inizio", name="data_inizio")
+      label(for="data_fine") Data fine:
+      input(type="date", id="data_fine", name="data_fine")
+      label(for="latitudine") Latitudine:
+      input(type="text", id="latitudine", name="latitudine")
+      label(for="longitudine") Longitudine:
+      input(type="text", id="longitudine", name="longitudine")
+      label(for="eta_minima") Età minima:
+      input(type="number", id="eta_minima", name="eta_minima")
+      button(type="submit") Modifica Progetto
+    
+    a(href="/Index") Azioni disponibili
+

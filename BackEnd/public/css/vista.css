@@ -1,0 +1,52 @@
+/* Reset CSS */
+html,
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+ul li:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #007bff; /* Blu */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

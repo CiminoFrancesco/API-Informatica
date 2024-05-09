@@ -1,0 +1,16 @@
+doctype html
+html(lang="it")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Eliminazione Progetto
+    link(rel='stylesheet' href='../public/css/eliminazione.css')
+
+  body
+    h1 Eliminazione Progetto
+    form(action="/EliminazioneProgetto", method="post")
+      label(for="id") Inserisci l'ID del progetto da eliminare:
+      input(type="number", id="id", name="id")
+      button(type="submit") Elimina
+    a(href="/Index") Azioni disponibili
+
