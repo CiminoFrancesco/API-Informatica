@@ -80,7 +80,7 @@
                     latitudine  =:latitudine,
                     longitudine  =:longitudine,
                     eta_minima  =:eta_minima,
-                WHERE id = :id;
+                WHERE ID = :id;
             ";
     
             try {
@@ -104,7 +104,7 @@
         {
             $statement = "
                 DELETE FROM progetto
-                WHERE id = :id;
+                WHERE ID = :id;
             ";
     
             try {
