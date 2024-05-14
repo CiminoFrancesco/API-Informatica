@@ -46,7 +46,7 @@
         {
             $statement = "
                 INSERT INTO progetto
-                    (:nome, :descrizione, :data_inizio, :data_fine,:latitudine,:longitudine,:eta_minima) 
+                    (nome, descrizione, data_inizio, data_fine,latitudine,longitudine,eta_minima) 
                 VALUES
                     (:nome, :descrizione, :data_inizio, :data_fine,:latitudine,:longitudine,:eta_minima);
             ";
@@ -55,12 +55,12 @@
                 $statement = $this->db->prepare($statement);
                 $statement->execute(array(
                     'nome' => $input['nome'],
-                    'descrizione'  => $input['descrizione'],
-                    'data_inizio'  => $input['data_inizio'],
-                    'data_fine'  => $input['data_fine'],
-                    'latitudine'  => $input['latitudine'],
-                    'longitudine'  => $input['longitudine'],
-                    'eta_minima'  => $input['eta_minima'],
+                    'descrizione'  => isset($input['descrizione']) ? $input['descrizione']:null,
+                    'data_inizio'  => isset($input['data_inizio']) ? $input['data_inizio']:null,
+                    'data_fine'  => isset($input['data_fine']) ? $input['data_inizio']:null,
+                    'latitudine'  => isset($input['latitudine']) ? $input['latitudine']:null,
+                    'longitudine'  => isset($input['longitudine']) ? $input['longitudine']:null,
+                    'eta_minima'  => isset($input['eta_minima']) ? $input['eta_minima']:null,
                 ));
                 return $statement->rowCount();
             } catch (\PDOException $e) {
@@ -102,18 +102,19 @@
     
         public function delete($id)
         {
-            $statement = "
+            $statement1 = "
+                DELETE FROM progetto_organizzazione
+                WHERE ID_progetto = :id;
                 DELETE FROM progetto
                 WHERE ID = :id;
-            ";
-    
-            try {
-                $statement = $this->db->prepare($statement);
-                $statement->execute(array('id' => $id));
-                return $statement->rowCount();
+          ";
+          try {
+                $statement1 = $this->db->prepare($statement1);
+                $statement1->execute(array(':id' => $id,':id'=>$id));
+                return $statement1->rowCount();
             } catch (\PDOException $e) {
                 exit($e->getMessage());
-            }   
+            }  
         }
     }
 
