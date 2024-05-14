@@ -20,10 +20,11 @@ require('../src/Tabelle/Progetto.php');
         {
             switch ($this->requestMethod) {
                 case 'GET':
-                    if ($this->userId) {
-                        $response = $this->getProgetto($this->userId);
-                    } else {
+                    if (is_null($this->userId)) {
                         $response = $this->getAllProgetti();
+                    } else {
+                       
+                        $response = $this->getProgetto($this->userId);
                     };
                     break;
                 case 'POST':
@@ -107,12 +108,19 @@ require('../src/Tabelle/Progetto.php');
     
         private function validateProgetto($input)
         {
-            if (! isset($input['firstname'])) {
+            if (! isset($input['nome'])) {
                 return false;
             }
-            if (! isset($input['lastname'])) {
+            if (! isset($input['descrizione'])) {
+                return false;
+            }if (! isset($input['data_inizio'])) {
+                return false;
+            }if (! isset($input['data_fine'])) {
+                return false;
+            }if (! isset($input['eta_minima'])) {
                 return false;
             }
+          
             return true;
         }
     
