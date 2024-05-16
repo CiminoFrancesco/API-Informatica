@@ -1,0 +1,75 @@
+/* Stile generale */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: green;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Main */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contenitore per le informazioni */
+#Informazioni {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.punto {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.punto h3 {
+    margin: 0 0 10px;
+}
+
+.punto button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.punto button:hover {
+    background-color: #0056b3;
+}
+
+/* Mappa */
+#map {
+    margin-top: 20px;
+    height: 500px;
+    width: 100%;
+}
